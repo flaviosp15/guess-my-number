@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Press Start 2P';
+}
+body {
+  height: 100vh;
+  color: #ffffff;
+  background-color: #000000;
+  /* background-color: #37ed2d; */
+}
+.container {
+  margin: 0 auto;
+  width: 800px;
+  height: 100vh;
+}
+
+/* HEADER */
+header {
+  position: relative;
+  height: 45vh;
+  border-bottom: 5px solid #ffffff;
+}
+.btn-restart {
+  position: absolute;
+  top: 1rem;
+  padding: 15px 25px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: none;
+}
+.between {
+  position: absolute;
+  top: 1rem;
+  right: 0;
+}
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.number {
+  position: absolute;
+  width: 120px;
+  color: #000000;
+  font-size: 40px;
+  text-align: center;
+  padding: 30px 0;
+  background-color: #ffffff;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  -webkit-transform: translate(-50%, 50%);
+  -moz-transform: translate(-50%, 50%);
+  -ms-transform: translate(-50%, 50%);
+  -o-transform: translate(-50%, 50%);
+}
+
+/* MAIN CONTENT */
+main {
+  display: flex;
+  height: 55vh;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+.guess {
+  width: 200px;
+  padding: 1rem;
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+.btn-check {
+  width: 130px;
+  height: 50px;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+.btn-check:disabled {
+  cursor: not-allowed;
+  color: #aaaaaa;
+}
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+.message {
+  height: 70px;
+  width: 275px;
+  margin-bottom: 20px;
+}
+.score {
+  width: 275px;
+  margin-bottom: 15px;
+}
+.highscore {
+  width: 275px;
+}
+.game-over {
+  background-color: #f54343;
+}
+.correct-answer {
+  background-color: #37ed2d;
+}
