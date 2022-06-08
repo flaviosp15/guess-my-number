@@ -20,6 +20,7 @@ body {
   margin: 0 auto;
   padding: 40px;
   max-width: 1000px;
+  min-height: 100vh;
 }
 .btn {
   padding: 15px 25px;
