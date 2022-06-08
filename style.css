@@ -1,53 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Press Start 2P';
+  font-family: "Press Start 2P";
 }
 body {
-  height: 100vh;
   color: #ffffff;
   background-color: #000000;
-  /* background-color: #37ed2d; */
 }
 .container {
   margin: 0 auto;
-  width: 800px;
-  height: 100vh;
+  padding: 40px;
+  max-width: 1000px;
+}
+.btn {
+  padding: 15px 25px;
+  font-size: 0.9rem;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
 }
 
 /* HEADER */
 header {
   position: relative;
-  height: 45vh;
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(3, 1fr);
   border-bottom: 5px solid #ffffff;
+  padding-bottom: 50px;
+  justify-items: center;
+  gap: 30px 0;
 }
 .btn-restart {
-  position: absolute;
-  top: 1rem;
-  padding: 15px 25px;
-  font-size: 14px;
-  cursor: pointer;
-  background-color: #ffffff;
-  border: none;
+  justify-self: left;
 }
-.between {
-  position: absolute;
-  top: 1rem;
-  right: 0;
+.range-number {
+  font-size: 1rem;
+  justify-self: right;
+  grid-area: 1 / 2 / 1 span / 3 span;
 }
 .title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
+  grid-area: 2 / 1 / 2 span / 3 span;
+  font-size: 1.5rem;
 }
 .number {
   position: absolute;
@@ -68,18 +64,18 @@ header {
 
 /* MAIN CONTENT */
 main {
-  display: flex;
-  height: 55vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 80px;
+  gap: 20px;
 }
 .left {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 50%;
 }
 .guess {
-  width: 200px;
+  max-width: 200px;
   padding: 1rem;
   background-color: transparent;
   color: #ffffff;
@@ -87,13 +83,6 @@ main {
   text-align: center;
   font-size: 35px;
   margin-bottom: 20px;
-}
-.btn-check {
-  width: 130px;
-  height: 50px;
-  background-color: #ffffff;
-  border: none;
-  cursor: pointer;
 }
 .btn-check:disabled {
   cursor: not-allowed;
@@ -103,24 +92,49 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 50%;
-}
-.message {
-  height: 70px;
-  width: 275px;
-  margin-bottom: 20px;
-}
-.score {
-  width: 275px;
-  margin-bottom: 15px;
-}
-.highscore {
-  width: 275px;
+  gap: 20px;
 }
 .game-over {
   background-color: #f54343;
 }
 .correct-answer {
   background-color: #37ed2d;
+}
+
+@media (max-width: 645px) {
+  .container {
+    padding: 30px;
+  }
+  .btn {
+    font-size: calc(0.6rem + 0.8vw);
+  }
+  header {
+    grid-template: auto / 1fr;
+    justify-items: center;
+    padding-bottom: 100px;
+  }
+  .btn-restart {
+    justify-self: initial;
+    grid-row: 3;
+  }
+  .range-number {
+    grid-area: initial;
+    justify-self: initial;
+    font-size: calc(0.5rem + 1vw);
+  }
+  .title {
+    grid-area: initial;
+    font-size: calc(0.7rem + 1.5vw);
+  }
+  main {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .right {
+    align-items: center;
+    font-size: calc(0.5rem + 1vw);
+  }
+  .message {
+    max-width: 17ch;
+  }
 }
