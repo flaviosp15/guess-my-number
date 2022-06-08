@@ -1,14 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-
+:root {
+  --textColor: #ffffff;
+  --bgColor: #000000;
+  --bgWin: #37ed2d;
+  --bgLoose: #f54343;
+  --disabled: #aaaaaa;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Press Start 2P";
+  font-family: "Press Start 2P", sans-serif;
 }
 body {
-  color: #ffffff;
-  background-color: #000000;
+  color: var(--textColor);
+  background-color: var(--bgColor);
 }
 .container {
   margin: 0 auto;
@@ -18,7 +24,7 @@ body {
 .btn {
   padding: 15px 25px;
   font-size: 0.9rem;
-  background-color: #ffffff;
+  background-color: var(--textColor);
   border: none;
   cursor: pointer;
 }
@@ -28,7 +34,7 @@ header {
   position: relative;
   display: grid;
   grid-template: repeat(2, 1fr) / repeat(3, 1fr);
-  border-bottom: 5px solid #ffffff;
+  border-bottom: 5px solid var(--textColor);
   padding-bottom: 50px;
   justify-items: center;
   gap: 30px 0;
@@ -48,11 +54,11 @@ header {
 .number {
   position: absolute;
   width: 120px;
-  color: #000000;
+  color: var(--bgColor);
   font-size: 40px;
   text-align: center;
   padding: 30px 0;
-  background-color: #ffffff;
+  background-color: var(--textColor);
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 50%);
@@ -69,7 +75,7 @@ main {
   padding-top: 80px;
   gap: 20px;
 }
-.left {
+.box-input {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,27 +84,27 @@ main {
   max-width: 200px;
   padding: 1rem;
   background-color: transparent;
-  color: #ffffff;
-  border: 2px solid #ffffff;
+  color: var(--textColor);
+  border: 2px solid var(--textColor);
   text-align: center;
   font-size: 35px;
   margin-bottom: 20px;
 }
 .btn-check:disabled {
   cursor: not-allowed;
-  color: #aaaaaa;
+  color: var(--disabled);
 }
-.right {
+.box-score {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
 .game-over {
-  background-color: #f54343;
+  background-color: var(--bgLoose);
 }
 .correct-answer {
-  background-color: #37ed2d;
+  background-color: var(--bgWin);
 }
 
 @media (max-width: 645px) {
@@ -130,7 +136,7 @@ main {
     grid-template-columns: 1fr;
     gap: 50px;
   }
-  .right {
+  .box-score {
     align-items: center;
     font-size: calc(0.5rem + 1vw);
   }
